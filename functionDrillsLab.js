@@ -356,23 +356,24 @@ function goldForCandy (coin) {
 
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [1,5,2,3,4,7,5,6,8,9]
+let sampleArray = [12,5,2,3,12,7,5,6,8,9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
 function checkForAscending (arr) {
+  let comparisonValue = arr[0]
   for (i = 0; i < arr.length -1; i++) {
-    if (arr[i] < arr[i + 1]) {
-       return true
+    if (arr[i] <= comparisonValue) {
+       return false
     } else {
-      return false
+      comparisonValue = arr[i]
     }
   }
+  return true
 }
-arrayIsAscending = checkForAscending(sampleArray)
-console.log(arrayIsAscending)
+let arrayIsAscending = checkForAscending(sampleArray)
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
@@ -398,10 +399,10 @@ function pond() {
 let globalScope = [`duck`]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = [`duck`, `squeeky`, `nautical`]
+let bathroomScope = [`duck`, `rubberduck`]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = [`duck`, `nautical`]
+let bathtubScope = [`duck`, `sailorDuck`, `rubberDuck`]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = [`duck`, `fluffy`]
+let pondScope = [`duck`, `realDuck`]
